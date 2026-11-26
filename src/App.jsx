@@ -8,6 +8,7 @@ import Dashboard from './pages/dashboard'
 import Calender from './pages/calender'
 import Settings from "./pages/settings"
 import Client from './pages/client'
+import Register from './pages/register'
 
 function App() {
   const[email, setEmail] = useState("");
@@ -35,6 +36,7 @@ function App() {
       <Route path="/calender" element={<Calender/>}></Route>
       <Route path="/settings" element={<Settings/>}></Route>
       <Route path="/client" element={<Client/>}></Route>
+      <Route path="/register" element={<Register/>}></Route>
     </Routes>
     </BrowserRouter>
      
