@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { BrowserRouter,Route, Routes, Router } from "react-router-dom";
-import Login from "./pages/login";
-import Projects from "./pages/projects";
-import Tasks from "./pages/tasks";
+import { BrowserRouter , Route , Routes } from "react-router-dom";
+import Projects from './pages/projects'
+import Tasks from './pages/tasks'
+import Login from '../src/pages/login'
+import Team from './pages/team'
+import Dashboard from './pages/dashboard'
+import Calender from './pages/calender'
+import Settings from "./pages/settings"
+import Client from './pages/client'
 
 function App() {
   const[email, setEmail] = useState("");
@@ -21,10 +26,16 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login/>}> </Route>
-      <Route path="/projects" element={<Projects/>}/>
-      <Route path="/tasks" element={<Tasks/>}/>
+      <Route path="/tasks" element={<Tasks/>}> </Route>
+      <Route path="/projects" element={<Projects/>}></Route> 
+      <Route path="/team" element={<Team/>}></Route>
+      <Route path="/dashboard" element={<Dashboard/>}></Route>
+      <Route path="/calender" element={<Calender/>}></Route>
+      <Route path="/settings" element={<Settings/>}></Route>
+      <Route path="/client" element={<Client/>}></Route>
     </Routes>
-    </BrowserRouter>    
+    </BrowserRouter>
+     
   );
 }
 export default App;
