@@ -1,10 +1,12 @@
 import { useState } from "react";   
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 
 function Login() {
   //const[email, setEmail] = useState("");
   //const[pass, setPass]=useState("");
-  const[formdata,setFormdata]=useState(
+  const location=useLocation();
+  const[Logindata,setFormdata]=useState(
     {
     username:"",
     password:""
@@ -14,22 +16,28 @@ function Login() {
 
   function handlechange(e){
     setFormdata({
-      ...formdata ,
+      ...Logindata ,
       [e.target.name] : e.target.value
     })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login page",formdata);
-    alert("Login Successfull!");
-    navigate("/dashboard",
-      {state:formdata})
+    const registerdata=location.state;
+    console.log("Register data",registerdata);
+    console.log("Login page",Logindata);
+    if(Logindata.username===registerdata.name && Logindata.password===registerdata.password){
+      console.log("if success");
+      navigate("/dashboard",
+        {state:Logindata})
+    }else{
+        alert("invalid input")
+    }
   };
 
   function print(){
     console.log("printing inside print function")
-    console.log(formdata)
+    console.log(Logindata)
   }
   return (
 

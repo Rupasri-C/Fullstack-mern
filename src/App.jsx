@@ -9,12 +9,15 @@ import Calender from './pages/calender'
 import Settings from "./pages/settings"
 import Client from './pages/client'
 import Register from './pages/register'
+import Admin from './pages/Admin/adminlayout'
+import AdminDashboard from './pages/Admin/dashboard'
+import AdminSettings from './pages/Admin/settings'
+import AdminUserdetails from './pages/Admin/userdetails'
 
 function App() {
   const[email, setEmail] = useState("");
   const[pass, setPass]=useState("");
   
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +40,11 @@ function App() {
       <Route path="/settings" element={<Settings/>}></Route>
       <Route path="/client" element={<Client/>}></Route>
       <Route path="/register" element={<Register/>}></Route>
+      <Route path="/admin" element={<Admin/>}>
+        <Route path="dashboard" element={<AdminDashboard/>}/> 
+        <Route path="settings" element={<AdminSettings/>}/>
+        <Route path="userdetails" element={<AdminUserdetails/>}/>
+      </Route>        
     </Routes>
     </BrowserRouter>
      
