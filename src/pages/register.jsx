@@ -12,7 +12,7 @@ function Register() {
 
     function onSubmit1(data) {
         console.log(data);
-        alert("Register success");
+        alert("Register success!!!");
         navigate("/", {
             state: data
         });
